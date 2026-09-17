@@ -27,7 +27,19 @@ jobs:
           node-version: 20
           cache: npm
 
-      - run: npm ci
+      # npm ci failed on the runner with a bare "exit code 1", and Actions logs
+      # need sign-in to read. Echoing the real npm error into an ::error::
+      # annotation makes it readable from the public API.
+      - name: Install dependencies
+        run: |
+          set +e
+          out="$(npm ci --no-audit --no-fund 2>&1)"; rc=$?
+          printf '%s\n' "$out"
+          if [ "$rc" -ne 0 ]; then
+            detail="$(printf '%s' "$out" | grep -Ei 'npm (error|ERR|warn)' | head -8 | tr '\n' ' ' | cut -c1-800)"
+            echo "::error::npm ci failed (rc=$rc): ${detail:-no npm error lines captured}"
+            exit 1
+          fi
 
       - run: npm run lint
 

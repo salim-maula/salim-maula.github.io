@@ -7,7 +7,7 @@ export const profile = {
   location: "Jakarta Timur, Indonesia",
   timezone: "Asia/Jakarta",
   timezoneLabel: "GMT+7",
-  availability: "Open to freelance & full-time",
+  availability: "Open to freelance",
   email: "huzaifah956@gmail.com",
   phone: "+62 822 4629 9806",
   phoneHref: "+6282246299806",

@@ -4,7 +4,7 @@ export const profile = {
   lastName: "Maula Hudzaifah",
   role: "Mobile Developer",
   specialty: "Flutter & Android",
-  location: "Jakarta Timur, Indonesia",
+  location: "Jakarta, Indonesia",
   timezone: "Asia/Jakarta",
   timezoneLabel: "GMT+7",
   availability: "Open to freelance",

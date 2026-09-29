@@ -3,7 +3,7 @@ export const profile = {
   firstName: "Salim",
   lastName: "Maula Hudzaifah",
   role: "Mobile Developer",
-  specialty: "Flutter & Android",
+  specialty: "Flutter, Android & Ios",
   location: "Jakarta, Indonesia",
   timezone: "Asia/Jakarta",
   timezoneLabel: "GMT+7",
